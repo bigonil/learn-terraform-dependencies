@@ -26,6 +26,6 @@ resource "aws_instance" "example_b" {
 }
 
 resource "aws_eip" "ip" {
-  vpc      = true
+  associate_with_private_ip = true
   instance = aws_instance.example_a.id
 }

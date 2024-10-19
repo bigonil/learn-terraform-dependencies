@@ -3,7 +3,7 @@
 
 terraform {
   cloud {
-    organization = "lb-learn-terraform-prd"
+    organization = "lb-terraform-prd"
     workspaces {
       name = "learn-terraform-dependencies"
     }

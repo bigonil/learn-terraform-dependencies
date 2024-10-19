@@ -31,6 +31,32 @@ resource "aws_s3_bucket" "example" {
     bucket = "example"
 }
 
+resource "aws_s3_bucket_policy" "mycompliantpolicy" {
+  bucket = "example"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Id      = "mycompliantpolicy"
+    Statement = [
+      {
+        Sid       = "HTTPSOnly"
+        Effect    = "Deny"
+        Principal = "*"
+        Action    = "s3:*"
+        Resource = [
+          aws_s3_bucket.mycompliantbucket.arn,
+          "${aws_s3_bucket.mycompliantbucket.arn}/*",
+        ]
+        Condition = {
+          Bool = {
+            "aws:SecureTransport" = "false"
+          }
+        }
+      },
+    ]
+  })
+}
+
 resource "aws_s3_bucket_public_access_block" "example-public-access-block" {
   bucket = aws_s3_bucket.example.id
 

@@ -3,6 +3,7 @@
 
 terraform {
   cloud {
+    organization = "lb-learn-terraform-prd"
     workspaces {
       name = "learn-terraform-dependencies"
     }
@@ -11,7 +12,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.17.1"
+      version = ">= 5.71.0"
     }
   }
 

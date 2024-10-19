@@ -1,1 +1,1 @@
-{"Path":"c:\\Users\\luca.bigoni\\learn-terraform-dependencies","Version":"2.0","Modules":[]}
+{"Path":"c:\\Users\\luca.bigoni\\learn-terraform-dependencies","Version":"2.0","Modules":[{"Key":"example_sqs_queue","Source":"registry.terraform.io/terraform-aws-modules/sqs/aws","Version":"4.2.1","Dir":".infracost\\terraform_modules\\ea2f1b582bd4df489ccc5187c80488aa","DownloadURL":"git::https://github.com/terraform-aws-modules/terraform-aws-sqs?ref=debb3cbca57ace668e0b79d9708c7308bc591d44"}]}

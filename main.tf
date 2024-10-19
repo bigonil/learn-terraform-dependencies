@@ -42,6 +42,7 @@ resource "aws_s3_bucket_public_access_block" "example-public-access-block" {
 
 resource "aws_instance" "example_c" {
   ami           = data.aws_ami.amazon_linux.id
+  associate_public_ip_address = false
   instance_type = "t2.micro"
 
   depends_on = [aws_s3_bucket.example]

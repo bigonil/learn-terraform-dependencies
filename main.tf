@@ -1,6 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
-
 provider "aws" {
   region = var.aws_region
 }
@@ -26,6 +23,6 @@ resource "aws_instance" "example_b" {
 }
 
 resource "aws_eip" "ip" {
-  associate_with_private_ip = true
+  domain   = "vpc"
   instance = aws_instance.example_a.id
 }
